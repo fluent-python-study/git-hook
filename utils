@@ -1,0 +1,14 @@
+#!/bin/bash
+
+PROJECT_NAME=GIT-HOOK
+BRANCHES_TO_SKIP=(master develop release hotfix)
+ISSUE_ID_SEQ=1
+
+get_branch_name(){
+    printf $PROJECT_NAME"-%05d" $ISSUE_ID_SEQ
+    sed -i "s/^ISSUE_ID_SEQ\=.*/ISSUE_ID_SEQ=$((ISSUE_ID_SEQ + 1))/" utils
+}
+
+create_branch() {
+    echo `git checkout -b $(get_branch_name)'-'${1}`
+}
