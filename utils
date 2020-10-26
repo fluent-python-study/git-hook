@@ -10,5 +10,5 @@ get_branch_name(){
 }
 
 create_branch() {
-    echo `git checkout -b $(get_branch_name)'-'${1}`
+    echo `git checkout -b $(get_branch_name)'-'${1} origin/master`
 }
