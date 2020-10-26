@@ -16,6 +16,7 @@
 4. `git merge  --ff-only origin/master`를 통해 HEAD를 이동합니다.
 5. `create_branch {simple branch description}` 명령어를 통해 신규 브랜치에 체크아웃합니다.
 6. 해당 브랜치에서 커밋할 경우 커밋 메시지에 `{PROJECT_NAME}-{ISSUE_ID_SEQ}` 형태로 prefix가 붙습니다.
+7. 위의 내용은 `git log` 명령어를 통해 확인할 수 있습니다.
 
 ### 브랜치를 잘못 생성할 경우
 1. `git branch -d {branch-to-delete}` 명령어를 통해 잘못 생성한 브랜치를 삭제합니다.
