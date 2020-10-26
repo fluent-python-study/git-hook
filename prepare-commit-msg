@@ -9,6 +9,6 @@ ISSUE_ID=`echo $BRANCH_NAME | egrep -o $PROJECT_NAME'-[0-9]+'`
 BRANCH_EXCLUDED=$(echo ${BRANCHES_TO_SKIP[@]} | grep $BRANCH_NAME | wc -w)
 BRANCH_IN_COMMIT=$(echo $1 | grep $ISSUE_ID | wc -w)
 
-if [ -n $JIRA_ID ] && ! [[ $BRANCH_EXCLUDED -ge 1 ]] && ! [[ $BRANCH_IN_COMMIT -ge 1 ]]; then 
+if [ -n $ISSUE_ID ] && ! [[ $BRANCH_EXCLUDED -ge 1 ]] && ! [[ $BRANCH_IN_COMMIT -ge 1 ]]; then 
   sed -i.bak -e "1s/^/$ISSUE_ID /" $1
 fi
